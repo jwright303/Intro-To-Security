@@ -1,0 +1,11 @@
+Report:
+I started off working with 3 hash functions (k) and a bitarray (n) of size 600k. I iterated through different bit array lengths with the 3 hash functoins.
+The best n for k=3 was right around 1.5 million. However, I was still getting false negatives and the false positive rate was not very good.
+Eventually I started fixing n and changing how many hash functions I used.
+
+One of the better results I found was using k=5 and n=1.6 million. This resulted in one false negative, and only 3 false positives. One thing that helped me was
+seeding the hash functions so that they were a little more predictible. This lead me to my final result which was k=14 and n=2000000
+
+One of the more interesting things I found when working on this assignments was about the speed when using a real bit array.
+I started off using a normal python list as my bit array, and after switching to a real bit array I actually didn't notice any speed increase.
+However, when it comes to space, the bit array is deffinetly more efficient since the list is storing pointers as opposed to bits which have a big difference in memory.
